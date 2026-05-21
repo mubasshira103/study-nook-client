@@ -1,15 +1,21 @@
 import React from 'react';
 import { Card, Button, Chip, Avatar } from '@heroui/react'; // Divider প্রয়োজন না হলে বাদ দিতে পারেন
 import { CalendarDays, MapPin, Users, CheckCircle, Wifi, Zap, VolumeX } from 'lucide-react';
-const fetchSingleRooms = async (id) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/rooms/${id}`);
+const fetchSingleRooms = async (id, token) => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/rooms/${id}`, {
+    headers: {
+      authorization: `Bearer ${token}` || '',
+    },
+  });
   const data = await res.json();
   return data || {};
 };
 const RoomDetails = async ({ params }) => {
   const { id } = await params;
-  const room = await fetchSingleRooms(id);
-
+  const { token } = await auth.api.getToken({
+    headers: await headers(),
+  });
+  const room = await fetchSingleRooms(id, token);
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-10 font-sans">
@@ -17,7 +23,7 @@ const RoomDetails = async ({ params }) => {
         {/* Left Side: Image and Info */}
         <div className="lg:col-span-2 space-y-6">
           <div className="relative rounded-3xl overflow-hidden shadow-sm">
-            <img src={room.image} alt={room.name} className="w-full h-[450px] object-cover" />
+            <img src={room.image} alt={room.name} className="w-full h-[450px] object-cover  transform transition duration-700 group-hover:scale-105" />
           </div>
 
           <div className="flex justify-between items-start">
