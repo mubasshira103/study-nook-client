@@ -1,4 +1,5 @@
 
+import CancelBooking from '@/component/CancelBooking';
 import { auth } from '@/lib/auth';
 import { Table } from '@heroui/react';
 import { headers } from 'next/headers';

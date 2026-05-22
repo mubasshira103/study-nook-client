@@ -18,7 +18,9 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { useState } from "react";
 
-
+export const metadata = {
+    title: "studyNook - register page page",
+};
 
 const RegisterPage = () => {
   const router = useRouter();

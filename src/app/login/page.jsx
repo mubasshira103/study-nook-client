@@ -7,7 +7,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
-
+export const metadata = {
+    title: "studyNook - Login page",
+};
 const LoginPage = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);

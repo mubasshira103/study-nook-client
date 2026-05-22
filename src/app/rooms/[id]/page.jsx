@@ -6,7 +6,9 @@ import { auth } from '@/lib/auth';
 import { headers } from 'next/headers';
 import Image from 'next/image';
 import RoomBookingModal from '@/component/RoomBookingModal';
-
+export const metadata = {
+    title: "studyNook - details page",
+};
 const fetchSingleRooms = async (id, token) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/rooms/${id}`, {
     headers: {

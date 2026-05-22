@@ -4,7 +4,9 @@ import { useSession } from '@/lib/auth-client';
 import { Button, Card, Input, TextArea } from '@heroui/react';
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
-
+export const metadata = {
+    title: "studyNook - Add-rooms Sessions",
+};
 const AddRoomForm = () => {
   const [selectedAmenities, setSelectedAmenities] = useState([]);
   const [loading, setLoading] = useState(false);

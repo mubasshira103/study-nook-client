@@ -1,7 +1,9 @@
 import RoomsCard from '@/component/RoomsCard';
 import { fetchStudyNook } from '@/lib/studynook/data';
 import React from 'react';
-
+export const metadata = {
+    title: "studyNook - all-rooms page",
+};
 const RoomsPage = async () => {
   const rooms = await fetchStudyNook();
   return (

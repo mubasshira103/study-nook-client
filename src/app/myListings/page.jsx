@@ -4,7 +4,9 @@ import { auth } from '@/lib/auth';
 import { headers } from 'next/headers';
 import RoomsCard from '@/component/RoomsCard'
 import ListingCard from '@/component/ListingCard';
-
+export const metadata = {
+    title: "studyNook - my-listing page",
+};
 const fetchSingleRooms = async (id='', token) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/myRooms/${id}`, {
     headers: {
