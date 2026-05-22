@@ -13,8 +13,8 @@ const RoomsCard = ({room}) => {
       >
         <div className="p-0">
           <Image
-            src={room.image}
-            alt={room.name}
+            src={room?.image}
+            alt={room?.name}
             className="w-full h-64 object-cover rounded-none"
             width={250}
             height={200}

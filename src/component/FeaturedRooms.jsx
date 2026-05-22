@@ -74,3 +74,4 @@ const FeaturedRooms =async () => {
 };
 
 export default FeaturedRooms;
+
